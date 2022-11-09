@@ -3,7 +3,7 @@ import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import swal from 'sweetalert';
 import loginImg from '../../../Images/loginImg.png'
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const { providerLogin, logIn } = useContext(AuthContext);
@@ -22,7 +22,6 @@ const Login = () => {
         });
 
     }
-
 
     const handleSubmitLogin = (event) => {
         event.preventDefault();
@@ -54,6 +53,19 @@ const Login = () => {
                 Alrt();
             })
             .catch(error => console.error(error))
+    }
+    const gitHubProvider = new GithubAuthProvider();
+    const handleGitHubSignIn = () => {
+        console.log('clicked')
+        providerLogin(gitHubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+                Alrt();
+            })
+            .catch(error => console.error(error))
+
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -89,7 +101,7 @@ const Login = () => {
                     <div className='text-center mb-5'>
                         <p className=''>or</p>
                         <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success mr-5">Google</button>
-                        <button className="btn btn-outline btn-info">GitHub</button>
+                        <button onClick={handleGitHubSignIn} className="btn btn-outline btn-info">GitHub</button>
                     </div>
                 </div>
             </div>
