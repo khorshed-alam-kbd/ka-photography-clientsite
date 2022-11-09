@@ -4,6 +4,7 @@ import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home";
 import Services from "../../Pages/Services/Services";
 import Login from "../../Pages/Shared/Login/Login";
+import Page404 from "../../Pages/Shared/Page404/Page404";
 import Register from "../../Pages/Shared/Register/Register";
 
 const router = createBrowserRouter([
@@ -32,9 +33,12 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
-
         ]
     },
+    {
+        path: '*',
+        element: <Page404></Page404>,
+    }
 ]);
 
 export default router;
