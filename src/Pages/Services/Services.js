@@ -12,13 +12,13 @@ const Services = () => {
 
     }, [])
     return (
-        <div className='mx-10 my-10'>
+        <div>
             <ServicesBanner></ServicesBanner>
             <div className='text-center my-10'>
                 <p className='text-5xl font-semibold mb-5'>Choose our Packages</p>
                 <p>At KA PHOTOGRAPHY, we have both budget wedding photographers and senior photographers to fulfill different clients’ wedding photography <br /> and cinematography needs. Here are our highly affordable wedding photography packages in Bangladesh</p>
             </div>
-            <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-10 mb-10'>
                 {
                     services.map(services => <ServicesCard
                         key={services.services_id}

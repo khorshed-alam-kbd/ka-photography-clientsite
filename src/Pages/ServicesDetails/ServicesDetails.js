@@ -1,8 +1,10 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import ServicesDetailsCard from './ServicesDetailsCard/ServicesDetailsCard';
 import ServicesDetailsReview from './ServicesDetailsReview/ServicesDetailsReview';
 
-const ServicesDetails = (services) => {
+const ServicesDetails = () => {
+    const services = useLoaderData();
     return (
         <div>
             <ServicesDetailsCard
