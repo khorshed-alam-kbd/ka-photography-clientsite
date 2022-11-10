@@ -13,14 +13,13 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/'
 
-    const Alrt = () => {
+    const Alert = () => {
         swal({
             title: "Congratulations",
-            text: `You are successfully Login in ka photography`,
+            text: "You are successfully Login in ka photography",
             icon: "success",
             button: "Done",
         });
-
     }
 
     const handleSubmitLogin = (event) => {
@@ -35,7 +34,7 @@ const Login = () => {
                 console.log(user)
                 form.reset();
                 navigate(from, { replace: true });
-                Alrt();
+                Alert();
             })
             .catch(error => {
                 console.error(error)
@@ -50,7 +49,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 navigate(from, { replace: true });
-                Alrt();
+                Alert();
             })
             .catch(error => console.error(error))
     }
@@ -62,7 +61,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 navigate(from, { replace: true });
-                Alrt();
+                Alert();
             })
             .catch(error => console.error(error))
 
