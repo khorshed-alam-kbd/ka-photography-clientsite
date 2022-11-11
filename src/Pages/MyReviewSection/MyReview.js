@@ -4,7 +4,7 @@ import useTitle from '../../hook/useTitle';
 
 const MyReview = ({ review, handleDeleteReview }) => {
     const { _id, userName, userEmail, userPhotoURL, serviceName, reviewMassage, rating, } = review;
-    useTitle('MyReview');
+    useTitle('Reviews');
 
     return (
         <div className='p-10'>

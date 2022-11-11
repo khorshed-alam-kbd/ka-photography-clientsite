@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-import useTitle from '../../../hook/useTitle';
 import logo from '../../../Images/logo.png'
 
 const Header = () => {
@@ -10,11 +9,22 @@ const Header = () => {
         logOut().then(() => { })
             .catch((error) => { });
     }
-    useTitle('Header');
     const menuItems = <>
         < li > <Link to='/'> HOME</Link></li>
         < li > <Link to='/services'> SERVICES</Link></li>
         < li > <Link to='/blog'> BLOG</Link></li>
+        {
+            user?.uid ?
+                < li > <Link to='/reviews/'>MY REVIEWS</Link></li>
+                :
+                <></>
+        }
+        {
+            user?.uid ?
+                < li > <Link to='/reviews/'>ADD SERVICES</Link></li>
+                :
+                <></>
+        }
     </>
     return (
         <div className="navbar bg-base-100">
@@ -44,16 +54,11 @@ const Header = () => {
             <div className="navbar-end">
                 {
                     user?.uid ?
-                        <Link onClick={handleSignOut}><button className="btn btn-outline btn-sm mr-3">LOGOUT</button></Link>
+                        <Link onClick={handleSignOut}><button className="btn btn-outline mr-3">LOGOUT</button></Link>
                         :
-                        <Link to='/login'><button className="btn btn-outline btn-sm mr-3">LOGIN</button></Link>
-
+                        <Link to='/login'><button className="btn btn-outline mr-3">LOGIN</button></Link>
                 }
-                {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar online">
-                    <div className="w-10 rounded-full">
-                        <img src="https://placeimg.com/80/80/people" alt='' />
-                    </div>
-                </label> */}
+
             </div>
         </div >
     );

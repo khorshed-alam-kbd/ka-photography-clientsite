@@ -37,7 +37,7 @@ const ServicesDetails = () => {
                 ></AddReview>
             </div>
             <div className='text-center'>
-                <Link to='/reviews/'><button className="btn btn-outline mb-10">MY ALL REVIEW</button></Link>
+                <Link to='/reviews/'><button className="btn btn-outline mb-10">MY REVIEWS</button></Link>
             </div>
         </div>
     );
