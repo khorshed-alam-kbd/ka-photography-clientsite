@@ -16,6 +16,8 @@ const ServicesDetails = () => {
         fetch(`https://ka-photography-server.vercel.app/reviews?id=${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
+
+            .catch(err => console.error(err))
     }, [_id]);
 
     return (

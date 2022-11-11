@@ -4,6 +4,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 const ServicesDetailsCard = ({ services }) => {
     const { title, img, price, rating, descriptions } = services;
+    console.log(descriptions, rating, 'map');
     return (
         <div>
             <div className="hero glass">
@@ -16,9 +17,9 @@ const ServicesDetailsCard = ({ services }) => {
 
                     <div>
                         <h1 className="text-5xl font-bold my-10">{title}</h1>
-                        <p className="">
+                        <p>
                             {
-                                descriptions.map(description => <li>{description}</li>)
+                                descriptions?.map(description => <li>{description}</li>)
                             }
                         </p>
                         <p className='my-5'>Rating: {rating} ★</p>

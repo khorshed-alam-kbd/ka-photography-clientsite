@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServicesDetails></ServicesDetails>,
-                loader: ({ params }) => fetch(`https://ka-photography-server.vercel.app/${params.id}`)
+                loader: ({ params }) => fetch(`https://ka-photography-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/reviews',
