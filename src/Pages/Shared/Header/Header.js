@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../../hook/useTitle';
 import logo from '../../../Images/logo.png'
 
 const Header = () => {
@@ -9,6 +10,7 @@ const Header = () => {
         logOut().then(() => { })
             .catch((error) => { });
     }
+    useTitle('Header');
     const menuItems = <>
         < li > <Link to='/'> HOME</Link></li>
         < li > <Link to='/services'> SERVICES</Link></li>

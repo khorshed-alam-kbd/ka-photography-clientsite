@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../hook/useTitle';
 import AddReview from '../Shared/AddReview/AddReview';
 import ServicesDetailsCard from './ServicesDetailsCard/ServicesDetailsCard';
 import ServicesDetailsReview from './ServicesDetailsReview/ServicesDetailsReview';
@@ -8,6 +9,8 @@ const ServicesDetails = () => {
     const services = useLoaderData();
     const [reviews, setReviews] = useState([])
     const { _id } = services;
+
+    useTitle('ServicesDetails');
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?id=${_id}`)

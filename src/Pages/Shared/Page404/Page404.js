@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hook/useTitle';
 import img404 from '../../../Images/img4o4.png'
 
 const Page404 = () => {
+    useTitle('ErrorPage');
     return (
         <div className="hero w-full min-h-screen" style={{ backgroundImage: `url(${img404})` }}>
             <div className="hero-overlay"></div>

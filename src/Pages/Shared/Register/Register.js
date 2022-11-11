@@ -3,12 +3,14 @@ import { Form, Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import swal from 'sweetalert';
 import registrationImg from '../../../Images/registration.png'
+import useTitle from '../../../hook/useTitle';
 
 const Register = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
+    useTitle('Register');
     const handleSubmitRegistration = (event) => {
         event.preventDefault();
         const form = event.target;

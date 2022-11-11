@@ -4,12 +4,15 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import swal from 'sweetalert';
 import loginImg from '../../../Images/loginImg.png'
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../../hook/useTitle';
 
 const Login = () => {
     const { providerLogin, logIn } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
+
+    useTitle('Login');
 
     const from = location.state?.from?.pathname || '/'
 

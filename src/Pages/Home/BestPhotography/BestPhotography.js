@@ -4,6 +4,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 const BestPhotography = () => {
+
     return (
         <>
             {/* <p className='font-semibold text-center my-3'>PHOTOGRAPHY</p> */}
