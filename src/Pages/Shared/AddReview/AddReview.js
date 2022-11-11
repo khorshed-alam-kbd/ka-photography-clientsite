@@ -6,6 +6,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 const AddReview = ({ services }) => {
     const { user } = useContext(AuthContext);
     const { _id, title } = services;
+
     const successAlert = () => {
         swal({
             title: "Congratulations",
@@ -46,8 +47,6 @@ const AddReview = ({ services }) => {
                 if (data.acknowledged) {
                     successAlert();
                     form.reset();
-
-
                 }
             })
             .catch(err => console.error(err));

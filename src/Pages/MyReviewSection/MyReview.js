@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useTitle from '../../hook/useTitle';
 
 
@@ -22,7 +23,7 @@ const MyReview = ({ review, handleDeleteReview }) => {
                         </div>
                     </div>
                     <div>
-                        <button className="btn btn-outline mr-5 ">EDIT REVIEW</button>
+                        <Link to={`/editReview/${_id}`}><button className="btn btn-outline mr-5 ">EDIT REVIEW</button></Link>
                         <button onClick={() => handleDeleteReview(_id)} className="btn btn-outline">DELETE</button>
                     </div>
                 </div>
