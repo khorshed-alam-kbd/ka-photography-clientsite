@@ -23,8 +23,6 @@ const AddReview = ({ services }) => {
         const email = user?.email;
         const photoURL = user?.photoURL;
 
-        console.log(photoURL)
-
         const review = {
             service: _id,
             serviceName: title,
@@ -48,6 +46,8 @@ const AddReview = ({ services }) => {
                 if (data.acknowledged) {
                     successAlert();
                     form.reset();
+
+
                 }
             })
             .catch(err => console.error(err));
@@ -102,7 +102,7 @@ const AddReview = ({ services }) => {
                             <div className='mt-5 text-center'>
                                 {
                                     user?.uid ?
-                                        <button className="btn btn-outline">REVIEW</button>
+                                        <button className="btn btn-outline">POST REVIEW</button>
                                         :
                                         <Link to='/login'><button className="btn btn-outline">LOGIN</button></Link>
                                 }

@@ -1,21 +1,27 @@
 import React from 'react';
 
 
-const MyReview = ({ review }) => {
-    const { userName, userEmail, userPhotoURL, serviceName, reviewMassage, rating, } = review;
+const MyReview = ({ review, handleDeleteReview }) => {
+    const { _id, userName, userEmail, userPhotoURL, serviceName, reviewMassage, rating, } = review;
 
     return (
         <div className='p-10'>
             <div className='bg-black rounded-xl p-5'>
-                <div className='flex flex-row items-center '>
-                    <div className="avatar online mr-5">
-                        <div className="w-16 rounded-full">
-                            <img src={userPhotoURL} alt='' />
+                <div className='flex flex-col md:flex-row lg:flex-row lg:items-center lg:justify-between '>
+                    <div className='flex flex-row items-center '>
+                        <div className="avatar online mr-5">
+                            <div className="w-16 rounded-full">
+                                <img src={userPhotoURL} alt='' />
+                            </div>
+                        </div>
+                        <div>
+                            <p className='text-xl font-semibold uppercase '>{userName}</p>
+                            <p className='text-gray-500'>{userEmail}</p>
                         </div>
                     </div>
                     <div>
-                        <p className='text-xl font-semibold uppercase '>{userName}</p>
-                        <p className='text-gray-500'>{userEmail}</p>
+                        <button className="btn btn-outline mr-5 ">UPDATE</button>
+                        <button onClick={() => handleDeleteReview(_id)} className="btn btn-outline">DELETE</button>
                     </div>
                 </div>
                 <div className='bg-zinc-900 rounded-xl my-5 p-5'>

@@ -15,8 +15,6 @@ const ServicesDetails = () => {
             .then(data => setReviews(data))
     }, [_id]);
 
-    console.log("hhhh", reviews)
-
     return (
         <div>
             <ServicesDetailsCard
