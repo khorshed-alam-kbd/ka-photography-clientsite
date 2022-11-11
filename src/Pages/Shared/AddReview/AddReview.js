@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const AddReview = ({ services }) => {
     const { user } = useContext(AuthContext);
     const { _id, title } = services;
+    const navigate = useNavigate();
 
     const successAlert = () => {
         swal({
@@ -34,7 +35,7 @@ const AddReview = ({ services }) => {
             rating: rating
 
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://ka-photography-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,6 +48,7 @@ const AddReview = ({ services }) => {
                 if (data.acknowledged) {
                     successAlert();
                     form.reset();
+                    navigate(`/services/${_id}`)
                 }
             })
             .catch(err => console.error(err));

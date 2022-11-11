@@ -37,7 +37,7 @@ const AddServices = () => {
             creatorEmail: email,
 
         }
-        fetch('http://localhost:5000/services', {
+        fetch('https://ka-photography-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -74,35 +74,35 @@ const AddServices = () => {
                         <p></p>
                 }
                 <div className='bg-zinc-900 rounded-xl my-5 p-5'>
-                    <form onSubmit={handleAddService}>
+                    <form onSubmit={handleAddService} >
                         <div className='flex flex-row'>
                             <div className=" w-full">
                                 <label className="label">
                                     <span className="label-text"> Services ID:</span>
                                 </label>
-                                <input type="text" name='services_id' placeholder="Type here" className="input input-bordered max-w-md" required />
+                                <input type="text" name='services_id' placeholder="Type here" className="input input-bordered" required />
                             </div>
                             <div className=" w-full">
                                 <label className="label">
                                     <span className="label-text">Service Name:</span>
                                 </label>
-                                <input type="text" name='title' placeholder="Type here" className="input input-bordered max-w-xs" required />
+                                <input type="text" name='title' placeholder="Type here" className="input input-bordered" required />
                             </div>
                             <div className=" w-full">
                                 <label className="label">
                                     <span className="label-text">Service Image:</span>
                                 </label>
-                                <input type="text" name='imgURL' placeholder="Enter Image URL" className="input input-bordered max-w-xs" required />
+                                <input type="text" name='imgURL' placeholder="Enter Image URL" className="input input-bordered" required />
                             </div>
-                        </div>
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text">Service Descriptions:</span>
-                            </label>
-                            <textarea name='descriptions' className="textarea textarea-bordered h-24" placeholder="Type here" required></textarea>
                         </div>
 
                         <div className='flex flex-row'>
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text">Service Descriptions:</span>
+                                </label>
+                                <textarea name='descriptions' className="textarea textarea-bordered h-12 max-w-xs" placeholder="Type here" required></textarea>
+                            </div>
                             <div className="w-full">
                                 <label className="label">
                                     <span className="label-text">Service Price:</span>
@@ -113,11 +113,12 @@ const AddServices = () => {
                                 <label className="label">
                                     <span className="label-text">Service Rating:</span>
                                 </label>
-                                <input type="text" name='rating' placeholder="Type here" className="input input-bordered max-w-xs" required />
+                                <input type="text" name='rating' placeholder="Type here" className="input input-bordered" required />
                             </div>
-                            <div className='mt-5 text-center'>
-                                <button className="btn btn-outline">ADD SERVICES</button>
-                            </div>
+
+                        </div>
+                        <div className='mt-5 text-center'>
+                            <button className="btn btn-outline">ADD SERVICES</button>
                         </div>
                     </form>
                 </div>

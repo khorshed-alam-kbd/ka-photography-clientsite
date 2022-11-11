@@ -1,21 +1,33 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import swal from 'sweetalert';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const EditReview = () => {
     const { user } = useContext(AuthContext);
     const [review, setReview] = useState([]);
     const { reviewMassage, rating, } = review;
+    const navigate = useNavigate();
     const router = useParams();
     const { id } = router;
-    const navigate = useNavigate();
+
+
+    const successAlert = () => {
+        swal({
+            title: "Congratulations",
+            text: "Your review successfully Updated",
+            icon: "success",
+            button: "Done",
+        });
+    }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${id}`)
+        fetch(`https://ka-photography-server.vercel.app/reviews/${id}`)
             .then(res => res.json())
             .then(data => setReview(data));
 
     }, [id])
+
     const handleUpdateReview = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -27,7 +39,7 @@ const EditReview = () => {
         }
         console.log(upReview);
 
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://ka-photography-server.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -38,8 +50,8 @@ const EditReview = () => {
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount) {
-                    // successAlert();
-                    // form.reset();
+                    successAlert();
+                    form.reset();
                     navigate('/reviews')
                 }
             })

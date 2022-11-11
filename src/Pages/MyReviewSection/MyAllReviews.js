@@ -11,19 +11,10 @@ const MyAllReviews = () => {
     useTitle('Reviews');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user.email}`)
+        fetch(`https://ka-photography-server.vercel.app/reviews?email=${user.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user?.email])
-
-    const Alert = () => {
-        swal({
-            title: "Congratulations",
-            text: "You are successfully Login in ka photography",
-            icon: "success",
-            button: "Done",
-        });
-    }
 
     const handleDeleteReview = (id) => {
 
@@ -36,7 +27,7 @@ const MyAllReviews = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/reviews/${id}`, {
+                    fetch(`https://ka-photography-server.vercel.app/reviews/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -48,11 +39,8 @@ const MyAllReviews = () => {
                                 });
                                 const remaining = reviews.filter(review => review._id !== id);
                                 setReviews(remaining);
-
                             }
                         });
-
-
                 }
             });
 
