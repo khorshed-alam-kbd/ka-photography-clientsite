@@ -20,7 +20,7 @@ const MyReview = ({ review, handleDeleteReview }) => {
                         </div>
                     </div>
                     <div>
-                        <button className="btn btn-outline mr-5 ">UPDATE</button>
+                        <button className="btn btn-outline mr-5 ">EDIT REVIEW</button>
                         <button onClick={() => handleDeleteReview(_id)} className="btn btn-outline">DELETE</button>
                     </div>
                 </div>

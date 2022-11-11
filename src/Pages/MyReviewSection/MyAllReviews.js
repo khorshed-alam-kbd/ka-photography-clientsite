@@ -13,6 +13,15 @@ const MyAllReviews = () => {
             .then(data => setReviews(data))
     }, [user?.email])
 
+    const Alert = () => {
+        swal({
+            title: "Congratulations",
+            text: "You are successfully Login in ka photography",
+            icon: "success",
+            button: "Done",
+        });
+    }
+
     const handleDeleteReview = (id) => {
 
         swal({
@@ -48,9 +57,11 @@ const MyAllReviews = () => {
 
     return (
         <div className='glass'>
-            <div className='text-center pt-5'>
-                <p className='text-3xl font-semibold'>Your Total Review Is : {reviews.length}</p>
-            </div>
+            {
+                reviews.length ? <p className='text-3xl font-semibold text-center pt-5'>Your Total Review Is : {reviews.length}</p> :
+                    <p className=' hero min-h-screen text-5xl font-bold'>No reviews were added</p>
+            }
+
             <div className='my-5'>
                 {
                     reviews.map(review => <MyReview
