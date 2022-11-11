@@ -23,15 +23,15 @@ const AddReview = ({ services }) => {
         const email = user?.email;
         const photoURL = user?.photoURL;
 
-        // console.log(review, rating, userName, userEmail, userPhotoURL, _id)
+        console.log(photoURL)
 
         const review = {
             service: _id,
             serviceName: title,
             userName: name,
             userEmail: email,
-            UserPhotoURL: photoURL,
-            review: reviewMassage,
+            userPhotoURL: photoURL,
+            reviewMassage: reviewMassage,
             rating: rating
 
         }
@@ -87,7 +87,7 @@ const AddReview = ({ services }) => {
                             </label>
                             {
                                 user?.uid ?
-                                    <textarea name='reviewMassage' className="textarea textarea-bordered h-24" placeholder="Type here"></textarea>
+                                    <textarea name='reviewMassage' className="textarea textarea-bordered h-24" placeholder="Type here" required></textarea>
                                     :
                                     <textarea onClick={errorAlert} className="textarea textarea-bordered h-24" placeholder="Type here"></textarea>
                             }
@@ -97,7 +97,7 @@ const AddReview = ({ services }) => {
                                 <label className="label">
                                     <span className="label-text">Rating :</span>
                                 </label>
-                                <input type="text" name='rating' placeholder="Type here" className="input input-bordered max-w-xs" />
+                                <input type="text" name='rating' placeholder="Type here" className="input input-bordered max-w-xs" required />
                             </div>
                             <div className='mt-5 text-center'>
                                 {

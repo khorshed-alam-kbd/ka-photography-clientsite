@@ -1,11 +1,22 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import AddReview from '../Shared/AddReview/AddReview';
 import ServicesDetailsCard from './ServicesDetailsCard/ServicesDetailsCard';
 import ServicesDetailsReview from './ServicesDetailsReview/ServicesDetailsReview';
 
 const ServicesDetails = () => {
     const services = useLoaderData();
+    const [reviews, setReviews] = useState([])
+    const { _id } = services;
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?id=${_id}`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [_id]);
+
+    console.log("hhhh", reviews)
+
     return (
         <div>
             <ServicesDetailsCard
@@ -13,15 +24,20 @@ const ServicesDetails = () => {
                 services={services}
             ></ServicesDetailsCard>
             <div className='glass'>
-                <ServicesDetailsReview></ServicesDetailsReview>
-                <ServicesDetailsReview></ServicesDetailsReview>
+                {
+                    reviews.map(review => <ServicesDetailsReview
+                        key={review._id}
+                        review={review}
+                    ></ServicesDetailsReview>)
+                }
                 <AddReview
                     key={services.services_id}
                     services={services}
                 ></AddReview>
             </div>
-
-
+            <div className='text-center'>
+                <Link to='/reviews/'><button className="btn btn-outline mb-10">MY ALL REVIEW</button></Link>
+            </div>
         </div>
     );
 };
