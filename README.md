@@ -4,6 +4,8 @@
 
 ### Website Live Link : https://ka-photography.web.app/
 
+### Database or data Link: https://ka-photography-server.vercel.app/
+
 *************************************************************************
 
 *************************************************************************
@@ -18,6 +20,8 @@
 6. Node js
 7. Express js
 8. React Router
+9.varcel
+10. mongodb database
 
 *************************************************************************
 
