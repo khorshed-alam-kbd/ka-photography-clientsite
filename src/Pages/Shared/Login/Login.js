@@ -36,7 +36,6 @@ const Login = () => {
                 const user = result.user
                 const currentUser = {
                     email: user.email,
-
                 }
                 fetch('https://ka-photography-server.vercel.app/jwt', {
                     method: 'POST',

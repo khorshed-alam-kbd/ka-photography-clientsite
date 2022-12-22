@@ -4,8 +4,10 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 const ServicesCard = ({ services }) => {
+
     const { _id, title, img, price, rating, descriptions } = services;
     const description = descriptions.slice(0, 5);
+
     return (
         <div className="card glass">
             <figure>
@@ -27,7 +29,7 @@ const ServicesCard = ({ services }) => {
                 <p className='text-lg'>Price: {price} TK</p>
                 <div className="card-actions justify-end">
                     <Link to={`/services/${_id}`}>
-                        <button className="btn btn-outline">Details</button>
+                        <button className="btn btn-outline btn-sm">Details</button>
                     </Link>
                 </div>
             </div>

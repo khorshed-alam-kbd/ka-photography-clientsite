@@ -11,7 +11,6 @@ const EditReview = () => {
     const router = useParams();
     const { id } = router;
 
-
     const successAlert = () => {
         swal({
             title: "Congratulations",
@@ -37,7 +36,7 @@ const EditReview = () => {
             reviewMassage: reviewMassage,
             rating: rating
         }
-        console.log(upReview);
+        // console.log(upReview);
 
         fetch(`https://ka-photography-server.vercel.app/reviews/${id}`, {
             method: 'PATCH',
@@ -56,7 +55,6 @@ const EditReview = () => {
                 }
             })
             .catch(err => console.error(err));
-
     }
 
     return (

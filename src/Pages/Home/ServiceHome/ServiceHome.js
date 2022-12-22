@@ -24,7 +24,6 @@ const ServiceHome = () => {
                         key={services.services_id}
                         services={services}
                     ></ServicesCard>)
-
                 }
             </div>
             <div className='text-center my-10'>

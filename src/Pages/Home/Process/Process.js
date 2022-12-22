@@ -8,6 +8,7 @@ const Process = () => {
                 <p className='text-5xl font-semibold mb-5'>Photography Process</p>
                 <p>Every couple does a lot of pre-planning for this special day. Respecting their emotion, we first discuss with all our clients,  <br /> know their requirements, and then start working on the project together as partners.</p>
             </div>
+
             <ul className="steps px-10 py-10 glass ">
                 <li className="step step-primary"><span className='text-3xl font-bold text-orange-500'>Concept</span>
                     So, we start with planning the concept obviously keeping the client’s needs and interests in mind.</li>

@@ -71,7 +71,7 @@ const AddServices = () => {
                             </div>
                         </div>
                         :
-                        <p></p>
+                        <></>
                 }
                 <div className='bg-zinc-900 rounded-xl my-5 p-5'>
                     <form onSubmit={handleAddService} >

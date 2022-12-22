@@ -6,6 +6,7 @@ import ServicesDetailsCard from './ServicesDetailsCard/ServicesDetailsCard';
 import ServicesDetailsReview from './ServicesDetailsReview/ServicesDetailsReview';
 
 const ServicesDetails = () => {
+
     const services = useLoaderData();
     const [reviews, setReviews] = useState([])
     const { _id } = services;

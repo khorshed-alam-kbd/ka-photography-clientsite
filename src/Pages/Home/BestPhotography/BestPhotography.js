@@ -19,7 +19,6 @@ const BestPhotography = () => {
                     <div>
                         <h1 className="text-4xl font-bold">KA PHOTOGRAPHY: The Best Wedding Photography Bangladesh</h1>
                         <p className="pt-6">A good wedding photographer’s job is to capture the sweet love story of a couple. And, KA PHOTOGRAPHY brings every moment of your wedding story to life. We are a trusted company when you are talking about professional photography in Bangladesh. What makes us stand out is our ability to capture the best moments, the tiniest of details, and the life of any wedding to make it a story worth telling. We have a team of highly enthusiastic and best wedding photographers who are versatile and capable of catering to different wedding photography styles. If you’re looking to hire wedding photographer in Bangladesh, then KA PHOTOGRAPHY could be the best solution for your wedding.</p>
-
                     </div>
                 </div>
             </div>
